@@ -5,6 +5,9 @@ defaults:
 on:
   push:
     branches: [main]
+    paths:
+      - 'buster/**'
+      - '.github/workflows/buster.yml'
 jobs:
   test:
     runs-on: ubuntu-20.04
@@ -14,6 +17,9 @@ jobs:
   build-deploy:
     runs-on: ubuntu-20.04
     needs: test
+    env:
+      TOKEN: ${{ secrets.TOKEN }}
+      USERNAME: ${{ secrets.USERNAME }}
     steps:
       - uses: actions/checkout@v2
       - run: make build-deploy
