@@ -10,4 +10,4 @@ test:
 include .env
 export
 build-deploy:
-	./build-deploy.sh
+	bash ./build-deploy.sh
