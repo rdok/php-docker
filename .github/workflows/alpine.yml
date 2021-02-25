@@ -1,0 +1,25 @@
+name: Alpine
+defaults:
+  run:
+    working-directory: ./alpine
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'alpine/**'
+      - '.github/workflows/alpine.yml'
+jobs:
+  test:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - run: make test
+  build-deploy:
+    runs-on: ubuntu-20.04
+    needs: test
+    env:
+      TOKEN: ${{ secrets.TOKEN }}
+      USERNAME: ${{ secrets.USERNAME }}
+    steps:
+      - uses: actions/checkout@v2
+      - run: make build-deploy
