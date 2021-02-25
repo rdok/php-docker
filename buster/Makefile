@@ -4,7 +4,7 @@ export PWD = $(shell pwd)
 export UID = $(shell id -u)
 export GID = $(shell id -g)
 
-test:
+test: build
 	docker run --rm $${DEV_BUSTER_IMG} composer --version
 	docker run --rm $${DEV_BUSTER_IMG} composer require phpunit/phpunit
 
