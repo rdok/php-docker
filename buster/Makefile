@@ -7,7 +7,8 @@ test:
 	docker run --rm $${DEV_BUSTER_IMG} composer --version
 	docker run --rm $${DEV_BUSTER_IMG} composer require phpunit/phpunit
 
-include .env
-export
+#include .env
+#export
 build-deploy:
 	bash ./build-deploy.sh
+
