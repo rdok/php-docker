@@ -20,8 +20,8 @@ shell:
 build:
 	docker build --tag $${DEV_BUSTER_IMG} .
 
-#include .env
-#export
+include .env
+export
 build-deploy:
-	bash ./build-deploy.sh
+	./build-deploy.sh 'rdok/php-docker:8:0-cli-alpine' 'php8-alpine'
 
