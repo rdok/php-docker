@@ -1,18 +1,18 @@
-name: php8.0-cli-alpine3.13
+name: php8.0-cli-buster
 on:
   push:
     branches: [ main ]
     paths:
-      - 'php8-alpine/**'
-      - '.github/workflows/php8-alpine.yml'
+      - 'php8-buster/**'
+      - '.github/workflows/php8-buster.yml'
 jobs:
   build-deploy:
     runs-on: ubuntu-20.04
     env:
       TOKEN: ${{ secrets.TOKEN }}
       USERNAME: ${{ secrets.USERNAME }}
-      DOCKER_IMG: "rdok/php-docker:8.0-cli-alpine3.13"
-      DOCKER_PATH: "php8-alpine"
+      DOCKER_IMG: "rdok/php-docker:8.0-cli-buster"
+      DOCKER_PATH: "php8-buster"
     steps:
       - uses: actions/checkout@v2
       - run: docker build --tag "${DOCKER_IMG}" "${DOCKER_PATH}"
