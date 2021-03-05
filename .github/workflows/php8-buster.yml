@@ -1,13 +1,13 @@
-name: Buster
+name: php8.0-buster
 defaults:
   run:
-    working-directory: ./buster
+    working-directory: ./php8/buster
 on:
   push:
     branches: [main]
     paths:
-      - 'buster/**'
-      - '.github/workflows/buster.yml'
+      - 'php8/buster/**'
+      - '.github/workflows/php8-buster.yml'
 jobs:
   test:
     runs-on: ubuntu-20.04
