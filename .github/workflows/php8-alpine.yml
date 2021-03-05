@@ -11,12 +11,13 @@ jobs:
     env:
       TOKEN: ${{ secrets.TOKEN }}
       USERNAME: ${{ secrets.USERNAME }}
-      DOCKER_IMG: "rdok/php-docker:8.0-cli-alpine"
+      DOCKER_IMG: "rdok/php-docker:8.0-cli-alpine3.13"
       DOCKER_PATH: "php8-alpine"
     steps:
       - uses: actions/checkout@v2
+      - run: docker build --tag "${DOCKER_IMG}" "${DOCKER_PATH}"
       - run: |
-          docker build --tag "${DOCKER_IMG}" "${DOCKER_PATH}"
           echo "${TOKEN}" | docker login -u "${USERNAME}" --password-stdin
           docker image push "${DOCKER_IMG}"
-          docker logout
+      - run: docker logout
+        if: ${{ always() }}
