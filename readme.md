@@ -1,11 +1,14 @@
 # PHP Docker
-[![Buster][buster_budget]][buster_ci]
-[![Alpine][alpine_budget]][alpine_ci]
+[![Buster][buster_badge]][buster_ci]
+[![Alpine][alpine_badge]][alpine_ci]
+[![Alpine][docker_hub_badge]][docker_hub]
 
-[buster_ci]: https://github.com/rdok/php-docker/actions/workflows/buster.yml
-[buster_budget]: https://github.com/rdok/php-docker/actions/workflows/buster.yml/badge.svg
-[alpine_ci]: https://github.com/rdok/php-docker/actions/workflows/alpine.yml
-[alpine_budget]: https://github.com/rdok/php-docker/actions/workflows/alpine.yml/badge.svg
+[buster_ci]: https://github.com/rdok/php-docker/actions/workflows/php8-buster.yml
+[buster_badge]: https://github.com/rdok/php-docker/actions/workflows/php8-buster.yml/badge.svg
+[alpine_ci]: https://github.com/rdok/php-docker/actions/workflows/php8-alpine.yml
+[alpine_badge]: https://github.com/rdok/php-docker/actions/workflows/php8-alpine.yml/badge.svg
+[docker_hub]: https://hub.docker.com/repository/docker/rdok/php-docker
+[docker_hub_badge]: https://img.shields.io/badge/Docker%20Hub-grey?style=square&logo=docker
 
 Docker images for CIs & development.
 
