@@ -1,13 +1,13 @@
-name: Alpine
+name: php8.0-alpine
 defaults:
   run:
-    working-directory: ./alpine
+    working-directory: ./php8/alpine
 on:
   push:
     branches: [main]
     paths:
-      - 'alpine/**'
-      - '.github/workflows/alpine.yml'
+      - 'php8/alpine/**'
+      - '.github/workflows/v8-alpine.yml'
 jobs:
   test:
     runs-on: ubuntu-20.04
