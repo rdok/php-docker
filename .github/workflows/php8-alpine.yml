@@ -1,23 +1,22 @@
 name: PHP8
 on:
   push:
-    branches: [main]
+    branches: [ main ]
     paths:
       - 'php8-alpine/**'
       - '.github/workflows/php8-alpine.yml'
 jobs:
-  test:
-    runs-on: ubuntu-20.04
-    steps:
-      - uses: actions/checkout@v2
-      - run: make test
   build-deploy:
     runs-on: ubuntu-20.04
-    needs: test
     env:
       TOKEN: ${{ secrets.TOKEN }}
       USERNAME: ${{ secrets.USERNAME }}
+      IMG: 'rdok/php-docker:8.0-cli-alpine'
+      PATH: 'php8-alpine'
     steps:
       - uses: actions/checkout@v2
       - run: |
-        bash ./build-deploy.sh 'rdok/php-docker:8:0-cli-alpine' 'php8-alpine'
+          docker build --tag "${IMG}" "${PATH}"
+          echo "${TOKEN}" | docker login -u "${USERNAME}" --password-stdin
+          docker image push ${IMG}
+          docker logout
