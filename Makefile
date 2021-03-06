@@ -29,3 +29,8 @@ test-php5-alpine:
 	docker build --tag dev/php5-alpine php5-alpine
 	docker run --rm dev/php5-alpine composer --version php
 	docker run --rm dev/php5-alpine composer require phpunit/phpunit
+
+test-php5-cli:
+	docker build --tag dev/php5-cli php5-cli
+	docker run --rm dev/php5-alpine composer --version php
+	docker run --rm dev/php5-alpine composer require phpunit/phpunit
