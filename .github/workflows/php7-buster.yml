@@ -11,7 +11,7 @@ jobs:
     env:
       TOKEN: ${{ secrets.TOKEN }}
       USERNAME: ${{ secrets.USERNAME }}
-      DOCKER_IMG: "rdok/php-docker:7.0-cli-buster"
+      DOCKER_IMG: "rdok/php-docker:7.4-cli-buster"
       DOCKER_PATH: "php7-buster"
     steps:
       - uses: actions/checkout@v2

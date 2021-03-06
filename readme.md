@@ -1,6 +1,6 @@
 # PHP Docker
-[![Buster PHP 7.0][alpine_php7_badge]][alpine_php7_ci]
-[![Buster PHP 7.0][buster_php7_badge]][buster_php7_ci]  
+[![Buster PHP 7.4][alpine_php7_badge]][alpine_php7_ci]
+[![Buster PHP 7.4][buster_php7_badge]][buster_php7_ci]  
 [![Alpine PHP 8.0][alpine_php8_badge]][alpine_php8_ci]
 [![Buster PHP 8.0][buster_php8_badge]][buster_php8_ci]  
 [![Alpine][docker_hub_badge]][docker_hub]
