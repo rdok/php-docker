@@ -20,6 +20,11 @@ shell:
 build:
 	docker build --tag $${BUSTER_IMG} php8-buster
 
+test-php5-alpine:
+	docker build --tag dev/php5-alpine php5-alpine
+	docker run --rm dev/php5-alpine composer --version php
+	docker run --rm dev/php5-alpine composer require phpunit/phpunit
+
 #include .env
 #export
 #build-deploy:
