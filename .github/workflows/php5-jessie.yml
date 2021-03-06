@@ -1,4 +1,4 @@
-name: php5.5-cli
+name: php5.5-cli-jessie
 on:
   push:
     branches: [main]
