@@ -1,0 +1,23 @@
+name: php5.5-fpm-alpine
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'php5-alpine/**'
+      - '.github/workflows/php5-alpine.yml'
+jobs:
+  build-deploy:
+    runs-on: ubuntu-20.04
+    env:
+      TOKEN: ${{ secrets.TOKEN }}
+      USERNAME: ${{ secrets.USERNAME }}
+      DOCKER_IMG: "rdok/php-docker:5.5-fpm-alpine"
+      DOCKER_PATH: "php5-alpine"
+    steps:
+      - uses: actions/checkout@v2
+      - run: docker build --tag "${DOCKER_IMG}" "${DOCKER_PATH}"
+      - run: |
+          echo "${TOKEN}" | docker login -u "${USERNAME}" --password-stdin
+          docker image push "${DOCKER_IMG}"
+      - run: docker logout
+        if: ${{ always() }}
