@@ -27,7 +27,4 @@ Docker images for CIs & development.
 ### Features
 Each image:
 - Installs composer
-
-### Images
-- php:8.0-cli-buster for development.
-- php:8.0-cli-alpine3.13 for CI.
+- Fixes composer cache path
